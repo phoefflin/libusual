@@ -13,6 +13,13 @@
 
 #include "test_common.h"
 
+#if !defined(LLONG_MAX) && defined(__LONG_LONG_MAX__)
+#define	LLONG_MAX	__LONG_LONG_MAX__
+#endif
+#ifndef LLONG_MIN
+#define	LLONG_MIN	(-LLONG_MAX - 1LL)
+#endif
+
 /*
  * strlcpy
  */
